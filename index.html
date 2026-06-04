@@ -202,11 +202,19 @@
         align-items: flex-start;
       }
 
-      .placeholder-headshot {
-        width: 220px;
-        height: 220px;
-      }
+.placeholder-headshot,
+.headshot {
+  width: 220px;
+  height: 220px;
+}
     }
+    .headshot {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border: 2px solid #65b8ff;
+  box-shadow: 0 0 30px rgba(101, 184, 255, 0.15);
+}
   </style>
 </head>
 
@@ -228,7 +236,6 @@
     src="images/headshot.jpg"
     alt="Daniel Villicana Headshot"
     class="headshot">
-        />
 
       <div>
         <p class="eyebrow">Game Programmer</p>
