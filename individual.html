@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Individual Work | Daniel Villicana</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0f1117;
+      color: #f4f4f4;
+      line-height: 1.6;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    a {
+      color: #65b8ff;
+      text-decoration: none;
+    }
+
+    .site-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 8%;
+      background: #151823;
+      border-bottom: 1px solid #2d3345;
+      position: sticky;
+      top: 0;
+    }
+
+    .logo {
+      color: white;
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #d9d9d9;
+    }
+
+    main {
+      width: min(1100px, 88%);
+      margin: 0 auto;
+    }
+
+    .page-title {
+      padding: 80px 0 48px;
+    }
+
+    .eyebrow {
+      color: #65b8ff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.85rem;
+    }
+
+    h1 {
+      font-size: clamp(2.8rem, 7vw, 5rem);
+      margin: 0 0 20px;
+      line-height: 1;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      padding-bottom: 72px;
+    }
+
+    .card {
+      background: #171b26;
+      border: 1px solid #2d3345;
+      padding: 24px;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+    }
+
+    .placeholder-media {
+      min-height: 300px;
+      background:
+        linear-gradient(135deg, rgba(101,184,255,0.22), rgba(255,211,105,0.08)),
+        #10131c;
+      border: 1px solid #3d465f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #91cfff;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 18px;
+    }
+
+    footer {
+      text-align: center;
+      color: #888;
+      padding: 32px;
+      border-top: 1px solid #2d3345;
+      background: #151823;
+    }
+
+    @media (max-width: 800px) {
+      .site-header,
+      nav,
+      .project-grid {
+        grid-template-columns: 1fr;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html">Daniel Villicana</a>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="individual.html">Individual Work</a>
+      <a href="teamwork.html">Teamwork</a>
+      <a href="personal.html">Personal</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-title">
+      <p class="eyebrow">Individual Work</p>
+      <h1>Individual Projects</h1>
+      <p>
+      </p>
+    </section>
+
+    <section class="project-grid">
+      <article class="card">
+       <img
+            src="images/prof-butler.png"
+            alt="Bullet Hell RPG screenshot"
+            class="project-image"
+        />
+        <h2>Bullet Hell RPG</h2>
+        <p>
+          Bullet Hell RPG is a turn based boss encounter replicating the style and charm of Undertale. The player takes on the evil Prof Butler in a challenging boss encounter.
+        </p>
+      </article>
+
+      <article class="card">
+        <img
+            src="images/UndertaleBattle.gif"
+            alt="Bullet Hell RPG gameplay GIF"
+            class="project-image"
+        />
+        <h2>Animated Image</h2>
+        <p>
+          Placeholder description for the animated image or GIF. Explain the gameplay,
+          system, mechanic, or feature being demonstrated.
+        </p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Daniel Villicana</p>
+  </footer>
+</body>
+</html>
