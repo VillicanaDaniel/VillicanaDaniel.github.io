@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Teamwork | Daniel Villicana</title>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  
   <style>
     body {
       margin: 0;
@@ -23,33 +25,52 @@
       text-decoration: none;
     }
 
-.site-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 24px 8%;
-  background: #151823;
-  border-bottom: 1px solid #2d3345;
-
-  position: sticky;
-  top: 0;
-
-  z-index: 9999;
-}
-
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 8%;
+      background: #151823;
+      border-bottom: 1px solid #2d3345;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    
+    .brand-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    
     .logo {
       color: white;
       font-weight: bold;
+      letter-spacing: 1px;
+      white-space: nowrap;
     }
-
+    
     nav {
       display: flex;
+      align-items: center;
       gap: 24px;
-      flex-wrap: wrap;
     }
-
+    
     nav a {
       color: #d9d9d9;
+      font-size: 0.95rem;
+      white-space: nowrap;
+    }
+    
+    .social-icon {
+      font-size: 1.35rem;
+      color: #d9d9d9;
+      transition: 0.2s ease;
+    }
+    
+    .social-icon:hover {
+      color: #65b8ff;
+      transform: translateY(-2px);
     }
 
     main {
@@ -128,16 +149,26 @@
 </head>
 
 <body>
-  <header class="site-header">
+<header class="site-header">
+  <div class="brand-row">
     <a class="logo" href="index.html">Daniel Villicana</a>
 
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="individual.html">Individual Work</a>
-      <a href="teamwork.html">Teamwork</a>
-      <a href="personal.html">Personal</a>
-    </nav>
-  </header>
+    <a href="https://www.linkedin.com/in/daniel-villicana-6b28191ba/" target="_blank" class="social-icon">
+      <i class="fab fa-linkedin"></i>
+    </a>
+
+    <a href="https://github.com/VillicanaDaniel" target="_blank" class="social-icon">
+      <i class="fab fa-github"></i>
+    </a>
+  </div>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="individual.html">Individual Work</a>
+    <a href="teamwork.html">Teamwork</a>
+    <a href="personal.html">Personal</a>
+  </nav>
+</header>
 
   <main>
     <section class="page-title">
