@@ -92,7 +92,7 @@
       transition: color 0.2s ease, transform 0.2s ease;
     }
 
-    .social-icon: {
+    .social-icon:hover {
       color: var(--gold);
       transform: translateY(-2px);
     }
@@ -124,7 +124,7 @@
       transition: transform 0.25s ease;
     }
 
-    nav a:::after {
+    nav a:hover::after {
       transform: scaleX(1);
       transform-origin: left;
     }
@@ -136,11 +136,11 @@
 
     .hero {
       position: relative;
-      min-height: 100vh;
-      padding: calc(var(--header-height) + 40px) 6% 42px;
+      min-height: 0;
+      padding: calc(var(--header-height) + 52px) 6% 64px;
       display: grid;
       grid-template-columns: minmax(320px, 0.8fr) minmax(0, 1.2fr);
-      gap: 82px;
+      gap: 64px;
       align-items: center;
       overflow: hidden;
       background:
@@ -185,8 +185,7 @@
 
     h1 {
       margin: 0 0 26px;
-      font-size: clamp(2.8rem, 4vw, 4rem);
-      line-height: 1;
+      font-size: clamp(4.6rem, 8vw, 8rem);
       font-weight: 700;
       line-height: 0.86;
       letter-spacing: -0.02em;
@@ -238,7 +237,7 @@
       transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
     }
 
-    .button: {
+    .button:hover {
       background: var(--gold);
       color: #111;
       transform: translateY(-2px);
@@ -407,8 +406,8 @@
 
       .hero {
         grid-template-columns: 1fr;
-        gap: 44px;
-        padding-top: calc(var(--header-height) + 42px);
+        gap: 40px;
+        padding: calc(var(--header-height) + 48px) 6% 64px;
       }
 
       .headshot {
@@ -445,7 +444,7 @@
 
       .hero {
         min-height: auto;
-        padding: 76px 6% 90px;
+        padding: 56px 6% 68px;
       }
 
       h1 {
