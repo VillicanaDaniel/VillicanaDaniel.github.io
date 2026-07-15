@@ -315,10 +315,26 @@
       transition: transform 0.55s ease, filter 0.55s ease;
     }
 
-    .featured-large:hover .project-image {
-      transform: scale(1.025);
-      filter: contrast(1.04);
-    }
+.featured-large {
+    transition:
+        border-color 0.25s ease,
+        transform 0.25s ease,
+        background-color 0.25s ease;
+}
+
+.featured-large:hover {
+    border-color: var(--gold);
+    background: #161b23;
+    transform: translateY(-4px);
+}
+
+.project-image {
+    transition: filter 0.25s ease;
+}
+
+.featured-large:hover .project-image {
+    filter: brightness(1.06);
+}
 
     .featured-large > div {
       flex: 1;
