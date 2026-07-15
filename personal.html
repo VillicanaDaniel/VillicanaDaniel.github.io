@@ -26,11 +26,50 @@ nav a::after{content:"";position:absolute;left:0;bottom:-25px;width:100%;height:
 nav a:hover::after{transform:scaleX(1)}
 .social-icon{color:#eee;transition:.2s}
 .social-icon:hover{color:var(--gold)}
-.page-hero{padding:calc(var(--header) + 40px) 6% 40px;background:linear-gradient(135deg,#0b0e13,#111620);border-bottom:1px solid rgba(217,184,95,.3)}
-.hero-inner{width:min(100%,var(--content));margin:auto}
-.eyebrow{font-size:.7rem;letter-spacing:.18em;color:var(--gold);text-transform:uppercase}
+.page-hero{
+position:relative;
+padding:calc(var(--header) + 40px) 6% 42px;
+overflow:hidden;
+background:
+radial-gradient(circle at 20% 45%,rgba(217,184,95,.08),transparent 28%),
+linear-gradient(135deg,#0b0e13 0%,#0a0d12 48%,#111620 100%);
+border-bottom:1px solid rgba(217,184,95,.32);
+}
+.page-hero::before{
+content:"";
+position:absolute;
+inset:0;
+opacity:.10;
+pointer-events:none;
+background-image:
+linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px),
+linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px);
+background-size:64px 64px;
+mask-image:linear-gradient(to right,black,transparent 88%);
+}
+.hero-inner{
+position:relative;
+z-index:1;
+width:min(100%,var(--content));
+margin:0 auto;
+}
+.eyebrow{
+margin:0 0 8px;
+font-size:.7rem;
+font-weight:700;
+letter-spacing:.18em;
+color:var(--gold);
+text-transform:uppercase;
+}
 h1,h2{font-family:"Barlow Condensed";text-transform:uppercase}
-h1{margin:8px 0 0;font-size:clamp(2.8rem,4vw,4rem);font-weight:600}
+h1{
+margin:0;
+font-size:clamp(2.8rem,4vw,4rem);
+font-weight:600;
+line-height:1;
+letter-spacing:0;
+white-space:nowrap;
+}
 .docs{padding:52px 5% 90px;background:linear-gradient(rgba(7,9,13,.94),rgba(7,9,13,.97)),url("images/ballinPoster.png") center/cover fixed}
 .grid{width:min(100%,var(--content));margin:auto;display:grid;grid-template-columns:repeat(2,1fr);gap:36px}
 .card{background:linear-gradient(180deg,rgba(18,23,30,.97),rgba(12,16,22,.98));border:1px solid rgba(217,184,95,.28);overflow:hidden;box-shadow:0 22px 55px rgba(0,0,0,.28);transition:.25s}
@@ -55,7 +94,10 @@ footer{text-align:center;padding:32px;background:#05070a;border-top:1px solid rg
 .site-header{position:static;flex-direction:column;align-items:flex-start;padding:18px 6%;height:auto}
 nav{flex-wrap:wrap;gap:16px}
 .page-hero{padding:44px 6% 36px}
-h1{font-size:3rem}
+h1{
+font-size:clamp(2.6rem,11vw,3.6rem);
+white-space:normal;
+}
 .docs{padding:44px 6% 72px}
 }
 </style>
@@ -96,8 +138,8 @@ h1{font-size:3rem}
 <p class="subtitle">Daniel Villicana Resume</p>
 <p>View or download my current resume.</p>
 <div class="buttons">
-<a class="button" href="documents/DanielVillicanaResume_7_9.pdf" target="_blank">Open Resume</a>
-<a class="button secondary" href="documents/DanielVillicanaResume_7_9.pdf" download>Download Resume</a>
+<a class="button" href="documents/Villicana_Resume_6_26.pdf" target="_blank">Open Resume</a>
+<a class="button secondary" href="documents/Villicana_Resume_6_26.pdf" download>Download Resume</a>
 </div>
 </div>
 </article>
