@@ -1,168 +1,421 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Personal | Daniel Villicana</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personal | Daniel Villicana</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-<style>
-:root{
---bg:#07090d;--gold:#d9b85f;--goldLight:#f0d990;--text:#f6f3eb;--muted:#c7c4bc;--header:72px;--content:1460px;
-}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,Arial,sans-serif}
-a{text-decoration:none;color:inherit}
-.site-header{position:fixed;top:0;left:0;right:0;height:var(--header);padding:0 4.5%;display:flex;justify-content:space-between;align-items:center;background:rgba(5,7,10,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08);z-index:1000}
-.brand-row{display:flex;gap:16px;align-items:center}
-.logo{font-family:"Barlow Condensed";font-size:1.55rem;font-weight:700;color:#fff;text-transform:uppercase}
-nav{display:flex;gap:34px}
-nav a{position:relative;color:#efede7}
-nav a::after{content:"";position:absolute;left:0;bottom:-25px;width:100%;height:2px;background:var(--gold);transform:scaleX(0);transition:.25s}
-nav a:hover::after{transform:scaleX(1)}
-.social-icon{color:#eee;transition:.2s}
-.social-icon:hover{color:var(--gold)}
-.page-hero{
-position:relative;
-padding:calc(var(--header) + 40px) 6% 42px;
-overflow:hidden;
-background:
-radial-gradient(circle at 20% 45%,rgba(217,184,95,.08),transparent 28%),
-linear-gradient(135deg,#0b0e13 0%,#0a0d12 48%,#111620 100%);
-border-bottom:1px solid rgba(217,184,95,.32);
-}
-.page-hero::before{
-content:"";
-position:absolute;
-inset:0;
-opacity:.10;
-pointer-events:none;
-background-image:
-linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px),
-linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px);
-background-size:64px 64px;
-mask-image:linear-gradient(to right,black,transparent 88%);
-}
-.hero-inner{
-position:relative;
-z-index:1;
-width:min(100%,var(--content));
-margin:0 auto;
-}
-.eyebrow{
-margin:0 0 8px;
-font-size:.7rem;
-font-weight:700;
-letter-spacing:.18em;
-color:var(--gold);
-text-transform:uppercase;
-}
-h1,h2{font-family:"Barlow Condensed";text-transform:uppercase}
-h1{
-margin:0;
-font-size:clamp(2.8rem,4vw,4rem);
-font-weight:600;
-line-height:1;
-letter-spacing:0;
-white-space:nowrap;
-}
-.docs{padding:52px 5% 90px;background:linear-gradient(rgba(7,9,13,.94),rgba(7,9,13,.97)),url("images/ballinPoster.png") center/cover fixed}
-.grid{width:min(100%,var(--content));margin:auto;display:grid;grid-template-columns:repeat(2,1fr);gap:36px}
-.card{background:linear-gradient(180deg,rgba(18,23,30,.97),rgba(12,16,22,.98));border:1px solid rgba(217,184,95,.28);overflow:hidden;box-shadow:0 22px 55px rgba(0,0,0,.28);transition:.25s}
-.card:hover{transform:translateY(-4px);border-color:var(--gold)}
-.preview{height:460px;overflow:hidden;background:#111}
-.preview img{width:100%;height:100%;object-fit:cover;object-position:top center}
-.content{padding:28px 32px}
-h2{margin:0 0 10px;font-size:2.2rem;font-weight:600}
-.subtitle{color:var(--goldLight);margin:0 0 18px;font-size:.9rem}
-.content p{color:var(--muted);line-height:1.8}
-.buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
-.button{padding:12px 18px;border:1px solid var(--gold);color:var(--goldLight);font-size:.75rem;text-transform:uppercase;font-weight:700;letter-spacing:.08em;transition:.2s}
-.button:hover{background:var(--gold);color:#111}
-.secondary{border-color:#555;color:#ddd}
-.secondary:hover{background:#2d3345;color:#fff}
-footer{text-align:center;padding:32px;background:#05070a;border-top:1px solid rgba(217,184,95,.3);color:#999}
-@media(max-width:900px){
-.grid{grid-template-columns:1fr}
-.preview{height:360px}
-}
-@media(max-width:780px){
-.site-header{position:static;flex-direction:column;align-items:flex-start;padding:18px 6%;height:auto}
-nav{flex-wrap:wrap;gap:16px}
-.page-hero{padding:44px 6% 36px}
-h1{
-font-size:clamp(2.6rem,11vw,3.6rem);
-white-space:normal;
-}
-.docs{padding:44px 6% 72px}
-}
-</style>
+  <style>
+    :root {
+      --background: #07090d;
+      --surface: #10141a;
+      --gold: #d9b85f;
+      --gold-light: #f0d990;
+      --text: #f6f3eb;
+      --text-muted: #c7c4bc;
+      --header-height: 72px;
+      --content-width: 1460px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      width: 100%;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      width: 100%;
+      margin: 0;
+      overflow-x: hidden;
+      background: var(--background);
+      color: var(--text);
+      font-family: "Inter", Arial, Helvetica, sans-serif;
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      min-height: var(--header-height);
+      padding: 0 4.5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      background: rgba(5, 7, 10, 0.94);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(14px);
+    }
+
+    .brand-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      min-width: 0;
+    }
+
+    .logo {
+      color: #ffffff;
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 1.55rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .social-icon {
+      color: #f0eee9;
+      font-size: 1.12rem;
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+
+    .social-icon:hover {
+      color: var(--gold);
+      transform: translateY(-2px);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 34px;
+    }
+
+    nav a {
+      position: relative;
+      color: #efede7;
+      font-size: 0.94rem;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -25px;
+      width: 100%;
+      height: 2px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.25s ease;
+    }
+
+    nav a:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    main {
+      width: 100%;
+      margin: 0;
+    }
+
+    /*
+      This banner uses the same class names, dimensions, spacing, and font
+      values as the Individual Work and Teamwork pages.
+    */
+    .page-hero {
+      position: relative;
+      height: 272px;
+      padding: 0 6% 42px;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 20% 45%, rgba(217, 184, 95, 0.08), transparent 28%),
+        linear-gradient(135deg, #0b0e13 0%, #0a0d12 48%, #111620 100%);
+      border-bottom: 1px solid rgba(217, 184, 95, 0.32);
+    }
+
+    .page-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0.10;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.028) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.028) 1px, transparent 1px);
+      background-size: 64px 64px;
+      mask-image: linear-gradient(to right, black, transparent 88%);
+    }
+
+    .page-hero-content {
+      position: relative;
+      z-index: 1;
+      width: min(100%, var(--content-width));
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--gold);
+      font-size: 0.7rem;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2 {
+      font-family: "Barlow Condensed", sans-serif;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 64px;
+      font-weight: 600;
+      line-height: 1;
+      letter-spacing: 0;
+      white-space: nowrap;
+    }
+
+    .docs {
+      padding: 52px 5% 90px;
+      background:
+        linear-gradient(rgba(7, 9, 13, 0.94), rgba(7, 9, 13, 0.97)),
+        url("images/ballinPoster.png") center / cover fixed;
+    }
+
+    .grid {
+      width: min(100%, var(--content-width));
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 36px;
+    }
+
+    .card {
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(18, 23, 30, 0.97), rgba(12, 16, 22, 0.98));
+      border: 1px solid rgba(217, 184, 95, 0.28);
+      box-shadow: 0 22px 55px rgba(0, 0, 0, 0.28);
+      transition: border-color 0.25s ease, transform 0.25s ease;
+    }
+
+    .card:hover {
+      border-color: var(--gold);
+      transform: translateY(-4px);
+    }
+
+    .preview {
+      height: 460px;
+      overflow: hidden;
+      background: #111;
+    }
+
+    .preview img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    .content {
+      padding: 28px 32px;
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: 2.2rem;
+      font-weight: 600;
+      line-height: 1;
+    }
+
+    .subtitle {
+      margin: 0 0 18px;
+      color: var(--gold-light);
+      font-size: 0.9rem;
+    }
+
+    .content > p {
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .button {
+      padding: 12px 18px;
+      color: var(--gold-light);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: 1px solid var(--gold);
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .button:hover {
+      background: var(--gold);
+      color: #111;
+    }
+
+    .secondary {
+      color: #ddd;
+      border-color: #555;
+    }
+
+    .secondary:hover {
+      background: #2d3345;
+      color: #fff;
+    }
+
+    footer {
+      padding: 32px;
+      background: #05070a;
+      color: #999;
+      text-align: center;
+      border-top: 1px solid rgba(217, 184, 95, 0.3);
+    }
+
+    @media (max-width: 900px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .preview {
+        height: 360px;
+      }
+    }
+
+    @media (max-width: 780px) {
+      .site-header {
+        position: static;
+        min-height: 0;
+        padding: 18px 6%;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        gap: 14px 22px;
+      }
+
+      nav a::after {
+        bottom: -5px;
+      }
+
+      .page-hero {
+        height: 190px;
+        padding: 0 6% 36px;
+      }
+
+      h1 {
+        font-size: 46px;
+        white-space: normal;
+      }
+
+      .docs {
+        padding: 44px 6% 72px;
+      }
+    }
+  </style>
 </head>
+
 <body>
+  <header class="site-header">
+    <div class="brand-row">
+      <a class="logo" href="index.html">Daniel Villicana</a>
 
-<header class="site-header">
-<div class="brand-row">
-<a class="logo" href="index.html">Daniel Villicana</a>
-<a href="https://www.linkedin.com/in/daniel-villicana-6b28191ba/" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
-<a href="https://github.com/VillicanaDaniel" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
-</div>
-<nav>
-<a href="index.html">Home</a>
-<a href="individual.html">Individual Work</a>
-<a href="teamwork.html">Teamwork</a>
-<a href="personal.html">Personal</a>
-</nav>
-</header>
+      <a href="https://www.linkedin.com/in/daniel-villicana-6b28191ba/" target="_blank" class="social-icon">
+        <i class="fab fa-linkedin"></i>
+      </a>
 
-<main>
-<section class="page-hero">
-<div class="hero-inner">
-<p class="eyebrow">Personal</p>
-<h1>Resume & Letter of Intent</h1>
-</div>
-</section>
+      <a href="https://github.com/VillicanaDaniel" target="_blank" class="social-icon">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
 
-<section class="docs">
-<div class="grid">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="individual.html">Individual Work</a>
+      <a href="teamwork.html">Teamwork</a>
+      <a href="personal.html">Personal</a>
+    </nav>
+  </header>
 
-<article class="card">
-<div class="preview">
-<img src="images/resume.png" alt="Resume Preview">
-</div>
-<div class="content">
-<h2>Resume</h2>
-<p class="subtitle">Daniel Villicana Resume</p>
-<p>View or download my current resume.</p>
-<div class="buttons">
-<a class="button" href="documents/Villicana_Resume_6_26.pdf" target="_blank">Open Resume</a>
-<a class="button secondary" href="documents/Villicana_Resume_6_26.pdf" download>Download Resume</a>
-</div>
-</div>
-</article>
+  <main>
+    <section class="page-hero">
+      <div class="page-hero-content">
+        <p class="eyebrow">Personal</p>
+        <h1>Resume & Letter of Intent</h1>
+      </div>
+    </section>
 
-<article class="card">
-<div class="preview">
-<img src="images/resume.png" alt="Cover Letter Preview">
-</div>
-<div class="content">
-<h2>Cover Letter / Letter of Intent</h2>
-<p class="subtitle">Daniel Villicana Cover Letter</p>
-<p>View or download my cover letter / letter of intent.</p>
-<div class="buttons">
-<a class="button" href="documents/CoverLetter.pdf" target="_blank">Open Cover Letter</a>
-<a class="button secondary" href="documents/CoverLetter.pdf" download>Download Cover Letter</a>
-</div>
-</div>
-</article>
+    <section class="docs">
+      <div class="grid">
+        <article class="card">
+          <div class="preview">
+            <img src="images/resume.png" alt="Resume Preview">
+          </div>
 
-</div>
-</section>
-</main>
+          <div class="content">
+            <h2>Resume</h2>
+            <p class="subtitle">Daniel Villicana Resume</p>
+            <p>View or download my current resume.</p>
 
-<footer><p>© 2026 Daniel Villicana</p></footer>
+            <div class="buttons">
+              <a class="button" href="documents/Villicana_Resume_6_26.pdf" target="_blank">Open Resume</a>
+              <a class="button secondary" href="documents/Villicana_Resume_6_26.pdf" download>Download Resume</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="preview">
+            <img src="images/resume.png" alt="Cover Letter Preview">
+          </div>
+
+          <div class="content">
+            <h2>Cover Letter / Letter of Intent</h2>
+            <p class="subtitle">Daniel Villicana Cover Letter</p>
+            <p>View or download my cover letter / letter of intent.</p>
+
+            <div class="buttons">
+              <a class="button" href="documents/CoverLetter.pdf" target="_blank">Open Cover Letter</a>
+              <a class="button secondary" href="documents/CoverLetter.pdf" download>Download Cover Letter</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Daniel Villicana</p>
+  </footer>
 </body>
 </html>
