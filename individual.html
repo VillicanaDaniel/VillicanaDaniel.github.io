@@ -140,7 +140,7 @@
 
     .page-hero {
       position: relative;
-      padding: calc(var(--header-height) + 72px) 6% 72px;
+      padding: calc(var(--header-height) + 40px) 6% 40px;
       overflow: hidden;
       background:
         radial-gradient(circle at 20% 45%, rgba(217, 184, 95, 0.08), transparent 28%),
@@ -169,9 +169,9 @@
     }
 
     .eyebrow {
-      margin: 0 0 12px;
+      margin: 0 0 8px;
       color: var(--gold);
-      font-size: 0.74rem;
+      font-size: 0.7rem;
       font-weight: 700;
       letter-spacing: 0.18em;
       text-transform: uppercase;
@@ -185,9 +185,9 @@
 
     h1 {
       margin: 0;
-      font-size: clamp(3.2rem, 5vw, 5rem);
+      font-size: clamp(2.8rem, 4vw, 4rem);
       font-weight: 600;
-      line-height: 0.95;
+      line-height: 1;
       letter-spacing: 0;
       white-space: nowrap;
     }
@@ -201,7 +201,7 @@
 
     .projects-section {
       position: relative;
-      padding: 84px 5% 104px;
+      padding: 52px 5% 90px;
       background:
         linear-gradient(rgba(7, 9, 13, 0.94), rgba(7, 9, 13, 0.97)),
         url("images/ButlerHell.png") center / cover fixed;
@@ -211,7 +211,7 @@
       width: min(100%, var(--content-width));
       margin: 0 auto;
       display: grid;
-      gap: 42px;
+      gap: 36px;
     }
 
     .project-card {
@@ -359,7 +359,7 @@
       }
 
       .project-content {
-        min-height: 310px;
+        min-height: 300px;
       }
     }
 
@@ -382,16 +382,16 @@
       }
 
       .page-hero {
-        padding: 68px 6% 62px;
+        padding: 44px 6% 36px;
       }
 
       h1 {
-        font-size: clamp(2.8rem, 12vw, 4rem);
+        font-size: clamp(2.6rem, 11vw, 3.6rem);
         white-space: normal;
       }
 
       .projects-section {
-        padding: 72px 6% 88px;
+        padding: 44px 6% 76px;
       }
 
       .project-media {
@@ -453,7 +453,6 @@
     <div class="page-hero-content reveal">
       <p class="eyebrow">Individual Work</p>
       <h1>Individual Projects</h1>
-      <p></p>
     </div>
   </section>
 
@@ -498,27 +497,6 @@
           </p>
 
           <a class="button" href="https://github.com/VillicanaDaniel/Doomenstein" target="_blank">Link to Github Repo →</a>
-        </div>
-      </article>
-
-      <article class="project-card reveal">
-        <div class="project-media">
-          <img
-            src="images/StarshipTitleScreen.png"
-            alt="Starship Screenshot"
-            class="project-image butler-image"
-          />
-        </div>
-
-        <div class="project-content">
-          <h2>Starship</h2>
-
-          <p>
-            This is my first project using my custom C++ engine at SMU Guildhall. The was the start of setting up our engine structure utilizing OpenGL to perform triangle rendering.
-            Your task if to defend Earth from alien invaders before they manage to exhaust its health. Upgrade your ship and manage your lives to succeed.
-          </p>
-
-          <a class="button" href="https://github.com/VillicanaDaniel/Project_Starship" target="_blank">Link to Github Repo →</a>
         </div>
       </article>
     </div>
