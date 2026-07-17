@@ -217,7 +217,7 @@
     .project-card {
       position: relative;
       display: grid;
-      grid-template-columns: minmax(0, 1.5fr) minmax(300px, 0.5fr);
+      grid-template-columns: minmax(0, 1.45fr) minmax(320px, 0.55fr);
       height: var(--card-height);
       background: linear-gradient(180deg, rgba(18, 23, 30, 0.97), rgba(12, 16, 22, 0.98));
       border: 1px solid rgba(217, 184, 95, 0.28);
@@ -232,6 +232,10 @@
       background: linear-gradient(180deg, rgba(20, 25, 33, 0.99), rgba(13, 17, 23, 0.99));
     }
 
+    .project-card:nth-child(even) {
+      grid-template-columns: minmax(320px, 0.55fr) minmax(0, 1.45fr);
+    }
+
     .project-card:nth-child(even) .project-media {
       order: 2;
     }
@@ -241,6 +245,7 @@
     }
 
     .project-media {
+      width: 100%;
       height: var(--card-height);
       overflow: hidden;
       background: #0d1015;
@@ -250,6 +255,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center;
     }
 
     .butler-image {
@@ -330,6 +336,10 @@
         grid-template-columns: minmax(0, 1.25fr) minmax(290px, 0.75fr);
       }
 
+      .project-card:nth-child(even) {
+        grid-template-columns: minmax(290px, 0.75fr) minmax(0, 1.25fr);
+      }
+
       .project-content {
         padding: 30px 32px;
       }
@@ -344,7 +354,8 @@
         --card-height: auto;
       }
 
-      .project-card {
+      .project-card,
+      .project-card:nth-child(even) {
         height: auto;
         grid-template-columns: 1fr;
       }
