@@ -232,11 +232,10 @@
 
     .sprite-grid,
     .games-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(2, 1fr);
-        gap: 20px;
-        align-items: stretch;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
     }
 
     .sprite-card {
@@ -264,12 +263,19 @@
       image-rendering: pixelated;
     }
 
-    .game-card {
-      overflow: hidden;
-      background: linear-gradient(180deg, rgba(18, 23, 30, 0.97), rgba(12, 16, 22, 0.98));
-      border: 1px solid rgba(217, 184, 95, 0.24);
-      transition: border-color 0.25s ease, transform 0.25s ease;
-    }
+  .game-card {
+    flex: 0 0 31%;
+    max-width: 31%;
+
+    overflow: hidden;
+    background: linear-gradient(
+        180deg,
+        rgba(18,23,30,.97),
+        rgba(12,16,22,.98)
+    );
+    border: 1px solid rgba(217,184,95,.24);
+    transition: border-color .25s ease, transform .25s ease;
+  }
 
     .game-card:hover {
       border-color: var(--gold);
